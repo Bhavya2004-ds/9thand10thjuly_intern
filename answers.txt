@@ -1,0 +1,169 @@
+Ans1)  db.users.countDocuments()-21
+
+Ans2)  [
+  {
+    $match: {
+       role:"admin"
+    }
+  }
+  ,
+{
+  $count: "Number of users"
+}
+]
+
+Ans3)  {role:"customer",username:/Karamchandani/}
+
+Ans4)  {username:"Sumanth Rao"}
+
+Ans5)  {firstName:/^R/}
+
+Ans6)  {skills:"Python"}
+
+Ans7)  {skills:{"$all":["Python","Java"]}}
+
+Ans8)  {"$or":[{firstName:"Aryan"},{lastName:"Gupta"}]}
+
+Ans9)  {"$and":[{skills:"Java"},{skills:{"$ne":"Python"}}]}
+
+Ans10) {lastName:"Sharma",role:"customer"}
+
+Ans11) {skills:{"$size":3}}
+
+Ans12) {firstName:/^S/,role:"admin"}
+
+Ans13) {"$and":[{skill:"Java"},{role:{"$ne":"admin"}}]}
+
+Ans14) {role:{$exists:false}}
+
+Ans15) {skills:{$size:4}}
+
+Ans16) {role:"customer",skills:{$exists:false}}
+
+Ans17) {useremail:/regexsoftware.com/}
+
+Ans18) {useremail:{"$not":/gmail.com/}}
+
+Ans19) {lastName:{"$ne":"Singh"}}
+
+Ans20) {role:"admin",skills:"Java"}
+
+Ans21) {firstName:"Ananya",role:"customer"}
+
+Ans22) {role:"admin","skills.2":{$exists:true}}
+
+Ans23) {role:"admin",firstName:/^R/}
+
+Ans24) {role:"customer",lastName:"Patel"}
+
+Ans25) {role:"admin",skills:"Python"}
+
+Ans26) {role:"customer",lastName:{"$ne":"Gupta"}}
+
+Ans27) {role:"admin",useremail:/@regexsoftware.com$/}
+
+Ans28) {role:"customer",skills:"React"}
+
+Ans29) {role:"customer",skills:"SQL"}
+
+Ans30) {role:"admin","skills.0":{$exists:true}}
+
+Ans31) {skills:{"$all":["Java","C++"]},role:"customer"}
+
+Ans32) {role:"admin",useremail:{"$not":/@gmail.com/}}
+
+Ans33) {role:"customer",lastName:/^M/}
+
+Ans34) {role:"admin",firstName:{"$ne":"Rahul"}}
+
+Ans35) {role:"customer",useremail:{"$not":/@gmail.com/}}
+
+Ans36) {"$and":[{role:"admin"},{skills:"Java"},{skills:{"$nin":["JavaScript"]}}]}
+
+Ans37) {role:"customer",firstName:{"$ne":"Ananya"}}
+
+Ans38) {role:"admin",useremail:/regexsoftware.com/}
+
+Ans39) {"$and":[{role:"customer"},{skills:"HTML"},{skills:{"$nin":["CSS"]}}]}
+
+Ans40) {role:"admin",skills:{"$all":["Java","JavaScript"]}}
+
+Ans41) [
+{
+  $group:{
+     _id:null,
+     avg_Age:{$avg:"$age"}
+}
+}
+]
+
+Ans42) {"$and":[{gender:"Female"},{city:"Jaipur"},{skills:"Python"}]}
+
+Ans43) {"$and":[{gender:"Male"},{city:"New Delhi"},{age:{"$gt":26}}]}
+
+Ans44) {"$or":[{city:"New Delhi"},{city:"Mumbai"}]}
+
+Ans45) 
+‎ 
+Ans46)    [
+  {
+    $group: {
+      _id: "$city",
+      countofcity:{$sum:1}
+      }
+    }
+  ,
+  {
+    $project: {
+      city:"$_id",
+      countofcity:1,
+      _id:0
+    }
+  }
+]  
+
+Ans47) [
+  {
+    $match: {
+      city:"New Delhi"
+    }
+  },
+  {
+    $count: 'Number of users'
+  }
+]
+
+Ans48) {city:"Jaipur",gender:"Female"}-2
+
+Ans49) [
+  {
+    $match: {
+       gender:"Male",
+      city:"New Delhi",
+      skills:"Java"
+    }
+  }
+  ,
+{
+  $count: "Number of users"
+}
+]
+
+Ans50) {"$and":[{city:"Hyderabad"},{age:{"$gt":24}},{skills:{"$all":["Python","C++"]}}]}
+
+Ans51) [
+  {
+    $match: {
+       age:{"$gt":24},
+      gender:"Female",
+      city:"Goa",
+      skills:{"$all":["Python","C++"]}
+    }
+  }
+  ,
+{
+  $count: "Number of users"
+}
+]
+
+
