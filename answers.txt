@@ -103,7 +103,17 @@ Ans43) {"$and":[{gender:"Male"},{city:"New Delhi"},{age:{"$gt":26}}]}
 
 Ans44) {"$or":[{city:"New Delhi"},{city:"Mumbai"}]}
 
-Ans45) 
+Ans45)  [
+  {
+    $group: {
+      _id: "$lastName",
+      numberofusers:{$sum:1},
+      users:{$push:"$$ROOT"}
+   
+    }
+  }
+]
+
 ‎ 
 Ans46)    [
   {
